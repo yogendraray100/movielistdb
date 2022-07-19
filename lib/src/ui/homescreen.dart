@@ -74,11 +74,13 @@ class HomeScreen extends StatelessWidget {
                   List<Movie> movies = state.movieList;
                   print(movies.length);
                   return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CarouselSlider.builder(
                           itemCount: movies.length,
                           itemBuilder: (BuildContext context, int index) {
                             Movie movie = movies[index];
+                            print(movie.backdropPath);
                             return Stack(
                               children: [
                                 ClipRRect(

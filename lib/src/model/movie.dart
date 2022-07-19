@@ -44,7 +44,7 @@ class Movie {
       title: json['title'],
       video: json['video'],
       voteCount: json['vote_count'],
-      voteAverage: json['vote_average'],
+      voteAverage: json['vote_average'].toString(),
     );
   }
 }
