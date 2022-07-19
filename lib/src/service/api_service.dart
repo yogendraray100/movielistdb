@@ -9,11 +9,13 @@ class ApiService {
 
   Future<List<Movie>> getNowPlayingMovie() async {
     try {
+      print('api call');
       final response = await _dio.get('$baseUrl/movie_now_playing?$apiKey');
       var movies = response.data['results'] as List;
       List<Movie> movieList = movies.map((m) => Movie.fromJson(m)).toList();
       return movieList;
     } catch (error, stacktrace) {
+      print('error');
       throw Exception(
           'Exception accoured: $error with stacktrace: $stacktrace');
     }
